@@ -1,0 +1,19 @@
+{
+  "name": "cyclingtools-website",
+  "version": "1.0.0",
+  "description": "Sitio web profesional para cyclingtools.app",
+  "main": "index.html",
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "scripts": {
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "cyclingtools",
+    "landing-page",
+    "responsive",
+    "html",
+    "css",
+    "javascript"
+  ]
+}
