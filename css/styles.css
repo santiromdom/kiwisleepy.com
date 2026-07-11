@@ -25,6 +25,7 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     background-color: #ffffff;
+    transition: opacity 0.15s ease-in-out;
 }
 
 a {
@@ -66,6 +67,133 @@ a {
 .btn-large {
     padding: 15px 40px;
     font-size: 1.1rem;
+}
+
+/* ==================== BOTÓN DE DESCARGA RESALTADO ==================== */
+.btn-glowing-download {
+    background: linear-gradient(135deg, var(--accent-color) 0%, #FFA500 100%);
+    color: var(--secondary-color) !important;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 30px;
+    padding: 14px 36px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(255, 214, 107, 0.4);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    animation: buttonPulse 2s infinite ease-in-out;
+}
+
+.btn-glowing-download::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: none;
+    animation: shineSweep 4s infinite ease-in-out;
+}
+
+.btn-glowing-download:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(255, 214, 107, 0.6);
+    background: linear-gradient(135deg, #FFA500 0%, var(--accent-color) 100%);
+}
+
+.btn-glowing-download:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+@keyframes buttonPulse {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(255, 214, 107, 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 25px rgba(255, 214, 107, 0.8);
+    }
+}
+
+@keyframes shineSweep {
+    0% {
+        left: -150%;
+    }
+    10% {
+        left: 150%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+/* ==================== BOTÓN OFICIAL PLAY STORE (BADGE) ==================== */
+.playstore-badge-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #000000;
+    color: #ffffff !important;
+    border: 1.5px solid #a0a0a0;
+    border-radius: 10px;
+    padding: 11px 22px;
+    text-align: left;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: fit-content;
+    margin: 10px auto;
+    text-decoration: none;
+}
+
+.playstore-badge-btn:hover {
+    background-color: #111111;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.playstore-badge-btn:active {
+    transform: translateY(0);
+}
+
+.playstore-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 14px;
+    flex-shrink: 0;
+}
+
+.playstore-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.playstore-subtext {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.9px;
+    line-height: 1;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    color: #ffffff;
+    opacity: 0.95;
+}
+
+.playstore-maintext {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: 0.2px;
+    color: #ffffff;
 }
 
 /* ==================== NAVEGACIÓN ==================== */
@@ -134,6 +262,42 @@ a {
 
 .nav-menu a:hover::after {
     width: 100%;
+}
+
+/* ==================== SELECTOR DE IDIOMA ==================== */
+.lang-selector-container {
+    display: flex;
+    align-items: center;
+}
+
+.lang-switcher {
+    display: flex;
+    background-color: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 2px;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--light-text);
+    cursor: pointer;
+    border-radius: 18px;
+    transition: var(--transition);
+}
+
+.lang-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 2px 4px rgba(107, 90, 224, 0.3);
+}
+
+.lang-btn:hover:not(.active) {
+    color: var(--primary-color);
 }
 
 .hamburger {
@@ -575,6 +739,14 @@ section h2 {
 
     .nav-menu li:last-child {
         border-bottom: none;
+    }
+
+    .lang-selector-container {
+        padding: 1rem 0 0.5rem 0;
+        justify-content: center;
+        border-top: 1px solid var(--border-color);
+        margin-top: 0.5rem;
+        width: 100%;
     }
 
     .hero .container {

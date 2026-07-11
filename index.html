@@ -26,11 +26,17 @@
                 <span></span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#features">Características</a></li>
-                <li><a href="#story">Nuestra Historia</a></li>
-                <li><a href="#download">Descargar</a></li>
-                <li><a href="#social">Síguenos</a></li>
+                <li><a href="#home" data-i18n="nav.home">Inicio</a></li>
+                <li><a href="#features" data-i18n="nav.features">Características</a></li>
+                <li><a href="#story" data-i18n="nav.story">Nuestra Historia</a></li>
+                <li><a href="#download" data-i18n="nav.download">Descargar</a></li>
+                <li><a href="#social" data-i18n="nav.social">Síguenos</a></li>
+                <li class="lang-selector-container">
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
@@ -39,11 +45,22 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>KiwiSleepy</h1>
-                <p class="hero-subtitle">Ruido Blanco, Rutinas y el mejor descanso para tu bebé</p>
-                <p class="hero-description">Diseñada por padres para padres. KiwiSleepy combina sonidos relajantes, rutinas estructuradas y un registro detallado para ayudarte a entender y mejorar los ciclos de sueño de tu pequeño.</p>
-                <p class="hero-description">Crea el ambiente perfecto para el descanso y establece hábitos saludables desde el primer día.</p>
-                <a href="#download" class="btn btn-primary">Descargar Ahora</a>
+                <h1 data-i18n="hero.title">KiwiSleepy</h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Ruido Blanco, Rutinas y el mejor descanso para tu bebé</p>
+                <p class="hero-description" data-i18n="hero.description1">Diseñada por padres para padres. KiwiSleepy combina sonidos relajantes, rutinas estructuradas y un registro detallado para ayudarte a entender y mejorar los ciclos de sueño de tu pequeño.</p>
+                <p class="hero-description" data-i18n="hero.description2">Crea el ambiente perfecto para el descanso y establece hábitos saludables desde el primer día.</p>
+                <a href="https://play.google.com/store/apps/details?id=com.rodoapps.kiwisleepy" class="playstore-badge-btn" target="_blank" rel="noopener noreferrer">
+                    <svg class="playstore-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32.5 483a32.3 32.3 0 0 0 24.8-1.5l301.7-172-73.4-73.4-253.1 247c-.5 0-.5 0 0 0z" fill="#ff3a44"/>
+                        <path d="M485.5 225.5l-102-58.2-76.4 76.4 76.4 76.4 102-58.2c22.6-12.9 22.6-33.8 0-46.4z" fill="#ffc107"/>
+                        <path d="M32.5 29c-.5 0-.5 0 0 0l253.1 247 73.4-73.4-301.7-172A32.3 32.3 0 0 0 32.5 29z" fill="#00e676"/>
+                        <path d="M19 45.4v421.2a32 32 0 0 0 6 19.3l259-253.1L25 26a31.4 31.4 0 0 0-6 19.4z" fill="#00b0ff"/>
+                    </svg>
+                    <div class="playstore-text">
+                        <span class="playstore-subtext" data-i18n="hero.playstoreSubtext">DISPONIBLE EN</span>
+                        <span class="playstore-maintext">Google Play</span>
+                    </div>
+                </a>
             </div>
             <div class="hero-image">
                 <div class="placeholder-image">
@@ -56,8 +73,8 @@
     <!-- CARACTERÍSTICAS PRINCIPALES -->
     <section class="features" id="features">
         <div class="container">
-            <h2>Todo lo que necesitas para sus noches</h2>
-            <p class="section-intro">Herramientas esenciales para facilitar el sueño y dar tranquilidad a toda la familia.</p>
+            <h2 data-i18n="features.title">Todo lo que necesitas para sus noches</h2>
+            <p class="section-intro" data-i18n="features.intro">Herramientas esenciales para facilitar el sueño y dar tranquilidad a toda la familia.</p>
             
             <div class="feature-banners">
                 <!-- FUNCIONALIDAD DE SONIDO (PRIORIDAD 1) -->
@@ -66,9 +83,9 @@
                         <img src="img/BannerSonidos.png" alt="Sonidos y Ruido Blanco" onclick="openModal(this)" style="cursor: zoom-in; width: 100%; height: auto;">
                     </div>
                     <div class="banner-text">
-                        <h3>🎵 Sonidos Relajantes y Ruido Blanco</h3>
-                        <p>Una amplia biblioteca de sonidos de alta calidad: desde ruido blanco clásico y naturaleza hasta nanas tradicionales. Incluye un <b>Modo Rojo</b> especial, temporizador con atenuación progresiva y la posibilidad de <b>grabar tu propia voz</b>.</p>
-                        <p>⌚ <b>Control Total desde tu Muñeca:</b> Podrás manejar el volumen, parar o activar el sonido sin tener que tocar el móvil, directamente desde tu <b>smartwatch o reloj inteligente</b>.</p>
+                        <h3 data-i18n="feature1.title">🎵 Sonidos Relajantes y Ruido Blanco</h3>
+                        <p data-i18n="feature1.p1">Una amplia biblioteca de sonidos de alta calidad: desde ruido blanco clásico y naturaleza hasta nanas tradicionales. Incluye un <b>Modo Rojo</b> especial, temporizador con atenuación progresiva y la posibilidad de <b>grabar tu propia voz</b>.</p>
+                        <p data-i18n="feature1.p2">⌚ <b>Control Total desde tu Muñeca:</b> Podrás manejar el volumen, parar o activar el sonido sin tener que tocar el móvil, directamente desde tu <b>smartwatch o reloj inteligente</b>.</p>
                     </div>
                 </div>
 
@@ -78,9 +95,9 @@
                         <img src="img/BannerRutinas.png" alt="Rutinas de Sueño" onclick="openModal(this)" style="cursor: zoom-in; width: 100%; height: auto;">
                     </div>
                     <div class="banner-text">
-                        <h3>🕒 Rutinas Personalizadas</h3>
-                        <p>Establece hábitos consistentes que regulen el reloj biológico de tu bebé. Configura pasos personalizados para antes de dormir y recibe recordatorios que guían el descanso de tu pequeño.</p>
-                        <p>🔔 <b>Sigue la rutina sin esfuerzo:</b> Recibirás todas las notificaciones también en tu <b>reloj inteligente</b> para no perderte ningún paso y seguir la rutina cómodamente mientras cuidas de tu bebé.</p>
+                        <h3 data-i18n="feature2.title">🕒 Rutinas Personalizadas</h3>
+                        <p data-i18n="feature2.p1">Establece hábitos consistentes que regulen el reloj biológico de tu bebé. Configura pasos personalizados para antes de dormir y recibe recordatorios que guían el descanso de tu pequeño.</p>
+                        <p data-i18n="feature2.p2">🔔 <b>Sigue la rutina sin esfuerzo:</b> Recibirás todas las notificaciones también en tu <b>reloj inteligente</b> para no perderte ningún paso y seguir la rutina cómodamente mientras cuidas de tu bebé.</p>
                     </div>
                 </div>
 
@@ -90,8 +107,8 @@
                         <img src="img/BannerRegistro.png" alt="Registro de Sueño" onclick="openModal(this)" style="cursor: zoom-in; width: 100%; height: auto;">
                     </div>
                     <div class="banner-text">
-                        <h3>📊 Registro y Diario de Sueño</h3>
-                        <p>Lleva un control detallado de las siestas y el sueño nocturno. Registra despertares, el humor al despertar y detalles de lactancia. Visualiza el historial para identificar patrones y optimizar el descanso de tu pequeño.</p>
+                        <h3 data-i18n="feature3.title">📊 Registro y Diario de Sueño</h3>
+                        <p data-i18n="feature3.p1">Lleva un control detallado de las siestas y el sueño nocturno. Registra despertares, el humor al despertar y detalles de lactancia. Visualiza el historial para identificar patrones y optimizar el descanso de tu pequeño.</p>
                     </div>
                 </div>
             </div>
@@ -102,14 +119,14 @@
     <section class="story" id="story" style="background-color: #f9f9f9; padding: 60px 0;">
         <div class="container">
             <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <h2>🍼 Nuestra Historia como Padres</h2>
-                <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-top: 20px;">
+                <h2 data-i18n="story.title">🍼 Nuestra Historia como Padres</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-top: 20px;" data-i18n="story.p1">
                     ¡Hola! Somos los creadores de KiwiSleepy y, sobre todo, somos padres. Nuestra aventura comenzó con el nacimiento de nuestro bebé. Como muchos de vosotros, pasamos por esas noches interminables donde el cansancio se mezclaba con la preocupación.
                 </p>
-                <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-top: 15px;">
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-top: 15px;" data-i18n="story.p2">
                     Probamos de todo, desde ruidos blancos hasta rutinas estrictas, y nos dimos cuenta de que tener todas estas herramientas en un solo lugar nos facilitaba la vida. Decidimos crear KiwiSleepy para compartir con otros padres lo que a nosotros nos funcionó: una combinación de sonidos relajantes, un registro sencillo para entender sus ciclos de sueño y rutinas que dan seguridad al bebé.
                 </p>
-                <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-top: 15px; font-weight: bold;">
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-top: 15px; font-weight: bold;" data-i18n="story.p3">
                     ¡Gracias por dejarnos formar parte de vuestras noches!
                 </p>
             </div>
@@ -125,24 +142,33 @@
     <!-- DESCARGA SECCIÓN -->
     <section class="download" id="download">
         <div class="container">
-            <h2>Descargar KiwiSleepy</h2>
-            <p class="section-intro">Disponible en Google Play Store para Android</p>
+            <h2 data-i18n="download.title">Descargar KiwiSleepy</h2>
+            <p class="section-intro" data-i18n="download.subtitle">Disponible en Google Play Store para Android</p>
             
             <div class="download-buttons">
-                <a href="https://play.google.com/store/apps/details?id=com.rodoapps.kiwisleepy" class="btn btn-primary btn-large" target="_blank">
-                    📱 Descargar en Google Play
+                <a href="https://play.google.com/store/apps/details?id=com.rodoapps.kiwisleepy" class="playstore-badge-btn" target="_blank" rel="noopener noreferrer">
+                    <svg class="playstore-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32.5 483a32.3 32.3 0 0 0 24.8-1.5l301.7-172-73.4-73.4-253.1 247c-.5 0-.5 0 0 0z" fill="#ff3a44"/>
+                        <path d="M485.5 225.5l-102-58.2-76.4 76.4 76.4 76.4 102-58.2c22.6-12.9 22.6-33.8 0-46.4z" fill="#ffc107"/>
+                        <path d="M32.5 29c-.5 0-.5 0 0 0l253.1 247 73.4-73.4-301.7-172A32.3 32.3 0 0 0 32.5 29z" fill="#00e676"/>
+                        <path d="M19 45.4v421.2a32 32 0 0 0 6 19.3l259-253.1L25 26a31.4 31.4 0 0 0-6 19.4z" fill="#00b0ff"/>
+                    </svg>
+                    <div class="playstore-text">
+                        <span class="playstore-subtext" data-i18n="hero.playstoreSubtext">DISPONIBLE EN</span>
+                        <span class="playstore-maintext">Google Play</span>
+                    </div>
                 </a>
             </div>
             
-            <p class="system-info">Compatible con Android y Smartwatches</p>
+            <p class="system-info" data-i18n="download.info">Compatible con Android y Smartwatches</p>
         </div>
     </section>
 
     <!-- REDES SOCIALES SECCIÓN -->
     <section class="social" id="social">
         <div class="container">
-            <h2>Síguenos</h2>
-            <p class="section-intro">Únete a nuestra comunidad de padres y descubre consejos para el descanso de tu bebé</p>
+            <h2 data-i18n="social.title">Síguenos</h2>
+            <p class="section-intro" data-i18n="social.intro">Únete a nuestra comunidad de padres y descubre consejos para el descanso de tu bebé</p>
             
             <div class="social-links">
                 <a href="https://www.youtube.com/@kiwisleepy_app" class="social-btn" target="_blank" rel="noopener noreferrer">
@@ -169,38 +195,39 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>KiwiSleepy</h3>
-                    <p>Dulces sueños para tu bebé, tranquilidad para ti.</p>
+                    <h3 data-i18n="hero.title">KiwiSleepy</h3>
+                    <p data-i18n="footer.slogan">Dulces sueños para tu bebé, tranquilidad para ti.</p>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Enlaces</h3>
+                    <h3 data-i18n="footer.links">Enlaces</h3>
                     <ul>
-                        <li><a href="#home">Inicio</a></li>
-                        <li><a href="#features">Características</a></li>
-                        <li><a href="#story">Historia</a></li>
-                        <li><a href="#download">Descargar</a></li>
-                        <li><a href="#social">Síguenos</a></li>
+                        <li><a href="#home" data-i18n="nav.home">Inicio</a></li>
+                        <li><a href="#features" data-i18n="nav.features">Características</a></li>
+                        <li><a href="#story" data-i18n="nav.story">Historia</a></li>
+                        <li><a href="#download" data-i18n="nav.download">Descargar</a></li>
+                        <li><a href="#social" data-i18n="nav.social">Síguenos</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Legal</h3>
+                    <h3 data-i18n="footer.legal">Legal</h3>
                     <ul>
-                        <li><a href="terminos-y-condiciones.html">Términos y Condiciones</a></li>
-                        <li><a href="politica-de-privacidad.html">Política de Privacidad</a></li>
+                        <li><a href="terminos-y-condiciones.html" data-i18n-href="legal.terms-url" data-i18n="legal.terms-text">Términos y Condiciones</a></li>
+                        <li><a href="politica-de-privacidad.html" data-i18n-href="legal.privacy-url" data-i18n="legal.privacy-text">Política de Privacidad</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h3>Contacto</h3>
-                    <p>Email: info@kiwisleepy.com</p>
-                    <p>© 2025 KiwiSleepy. Todos los derechos reservados.</p>
+                    <h3 data-i18n="footer.contact">Contacto</h3>
+                    <p data-i18n="footer.contactEmail">Email: info@kiwisleepy.com</p>
+                    <p data-i18n="footer.rights">© 2025 KiwiSleepy. Todos los derechos reservados.</p>
                 </div>
             </div>
         </div>
     </footer>
 
+    <script src="js/translations.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
