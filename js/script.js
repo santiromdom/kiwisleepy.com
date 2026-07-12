@@ -142,6 +142,22 @@ function translatePage(lang) {
         }
     });
 
+    // Translate image sources
+    document.querySelectorAll('[data-i18n-src]').forEach(elem => {
+        const key = elem.getAttribute('data-i18n-src');
+        if (translations[lang] && translations[lang][key]) {
+            elem.setAttribute('src', translations[lang][key]);
+        }
+    });
+
+    // Translate image alt attributes
+    document.querySelectorAll('[data-i18n-alt]').forEach(elem => {
+        const key = elem.getAttribute('data-i18n-alt');
+        if (translations[lang] && translations[lang][key]) {
+            elem.setAttribute('alt', translations[lang][key]);
+        }
+    });
+
     // Translate metadata
     if (translations[lang]) {
         if (translations[lang]['meta.title']) {

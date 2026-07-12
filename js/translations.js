@@ -42,7 +42,13 @@ const translations = {
     "legal.terms-url": "terminos-y-condiciones.html",
     "legal.privacy-url": "politica-de-privacidad.html",
     "legal.terms-text": "Términos y Condiciones",
-    "legal.privacy-text": "Política de Privacidad"
+    "legal.privacy-text": "Política de Privacidad",
+    "feature1.img-src": "img/BannerSonidos.png",
+    "feature1.img-alt": "Sonidos y Ruido Blanco",
+    "feature2.img-src": "img/BannerRutinas.png",
+    "feature2.img-alt": "Rutinas de Sueño",
+    "feature3.img-src": "img/BannerRegistro.png",
+    "feature3.img-alt": "Registro de Sueño"
   },
   en: {
     "meta.title": "KiwiSleepy - White Noise, Routines & Baby Sleep",
@@ -87,6 +93,12 @@ const translations = {
     "legal.terms-url": "terms-and-conditions.html",
     "legal.privacy-url": "privacy-policy.html",
     "legal.terms-text": "Terms & Conditions",
-    "legal.privacy-text": "Privacy Policy"
+    "legal.privacy-text": "Privacy Policy",
+    "feature1.img-src": "img/BannerSonidosEn.png",
+    "feature1.img-alt": "Relaxing Sounds and White Noise",
+    "feature2.img-src": "img/BannerRutinasEn.png",
+    "feature2.img-alt": "Sleep Routines",
+    "feature3.img-src": "img/BannerRegistroEn.png",
+    "feature3.img-alt": "Sleep Log"
   }
 };
