@@ -215,6 +215,14 @@ function handleLegalPageRedirect(lang) {
         targetPage = 'terms-and-conditions.html';
     } else if (currentPage === 'terms-and-conditions.html' && lang === 'es') {
         targetPage = 'terminos-y-condiciones.html';
+    } else if (currentPage === 'blog.html' && lang === 'en') {
+        targetPage = 'blog-en.html';
+    } else if (currentPage === 'blog-en.html' && lang === 'es') {
+        targetPage = 'blog.html';
+    } else if (currentPage === 'como-las-nanas-calman-a-los-bebes.html' && lang === 'en') {
+        targetPage = 'how-lullabies-calm-babies.html';
+    } else if (currentPage === 'how-lullabies-calm-babies.html' && lang === 'es') {
+        targetPage = 'como-las-nanas-calman-a-los-bebes.html';
     }
 
     if (targetPage) {
@@ -239,9 +247,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // If current page is a legal page, check if we need to redirect right away
     const currentPage = getCurrentPage();
-    const isLegalPage = ['politica-de-privacidad.html', 'privacy-policy.html', 'terminos-y-condiciones.html', 'terms-and-conditions.html'].includes(currentPage);
+    const isStaticPage = ['politica-de-privacidad.html', 'privacy-policy.html', 'terminos-y-condiciones.html', 'terms-and-conditions.html', 'blog.html', 'blog-en.html', 'como-las-nanas-calman-a-los-bebes.html', 'how-lullabies-calm-babies.html'].includes(currentPage);
     
-    if (isLegalPage) {
+    if (isStaticPage) {
         // Correct static page language based on preferences
         if (currentPage === 'politica-de-privacidad.html' && lang === 'en') {
             window.location.replace('privacy-policy.html');
@@ -255,11 +263,23 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (currentPage === 'terms-and-conditions.html' && lang === 'es') {
             window.location.replace('terminos-y-condiciones.html');
             return;
+        } else if (currentPage === 'blog.html' && lang === 'en') {
+            window.location.replace('blog-en.html');
+            return;
+        } else if (currentPage === 'blog-en.html' && lang === 'es') {
+            window.location.replace('blog.html');
+            return;
+        } else if (currentPage === 'como-las-nanas-calman-a-los-bebes.html' && lang === 'en') {
+            window.location.replace('how-lullabies-calm-babies.html');
+            return;
+        } else if (currentPage === 'how-lullabies-calm-babies.html' && lang === 'es') {
+            window.location.replace('como-las-nanas-calman-a-los-bebes.html');
+            return;
         }
     }
 
     // 2. Translate index page dynamically
-    if (!isLegalPage) {
+    if (!isStaticPage) {
         translatePage(lang);
     }
 
@@ -278,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedLang = e.currentTarget.getAttribute('data-lang');
             if (selectedLang !== localStorage.getItem('preferred-lang')) {
                 // If it's a legal page, redirect instead of translating dynamically
-                if (isLegalPage) {
+                if (isStaticPage) {
                     localStorage.setItem('preferred-lang', selectedLang);
                     handleLegalPageRedirect(selectedLang);
                 } else {

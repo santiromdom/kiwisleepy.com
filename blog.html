@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KiwiSleepy Blog - Artículos sobre el sueño del bebé, ruido blanco, rutinas y consejos para padres.">
+    <title>Blog | KiwiSleepy</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="img/ic_launcher_v2_playstore.png">
+    <style>
+        .blog-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .blog-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--primary-color);
+            transition: var(--transition);
+            display: block;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.15);
+        }
+        .blog-card h2 {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-align: left;
+        }
+        .blog-card .meta {
+            color: var(--light-text);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .blog-card p {
+            line-height: 1.6;
+        }
+        .blog-card .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">
+                    <img src="img/ic_launcher_v2_playstore.png" alt="KiwiSleepy Logo">
+                    KiwiSleepy
+                </a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Inicio</a></li>
+                <li><a href="index.html#features">Características</a></li>
+                <li><a href="index.html#story">Nuestra Historia</a></li>
+                <li><a href="blog.html" style="color: var(--primary-color); font-weight: bold;">Blog</a></li>
+                <li><a href="index.html#download">Descargar</a></li>
+                <li class="lang-selector-container">
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- BLOG SECTION -->
+    <section class="legal-page" style="background-color: var(--light-bg); min-height: 70vh;">
+        <div class="container">
+            <h1>Blog KiwiSleepy</h1>
+            <p class="section-intro">Consejos, guías y ciencia sobre el sueño de tu bebé</p>
+
+            <div class="blog-list">
+                <a href="como-las-nanas-calman-a-los-bebes.html" class="blog-card">
+                    <h2>Guía Completa: Cómo las Nanas Calman a los Bebés y la Ciencia detrás de su Magia</h2>
+                    <div class="meta">Julio 2026 • 5 min de lectura</div>
+                    <p>Cantar una nana o canción de cuna a un bebé es una tradición universal, un profundo acto de amor y consuelo que trasciende culturas y generaciones. Pero, ¿qué es exactamente lo que da a estas suaves melodías el poder de arrullar a un bebé hasta un sueño profundo? Descúbrelo aquí...</p>
+                    <span class="read-more">Leer Artículo →</span>
+                </a>
+                
+                <!-- Más artículos se añadirán aquí en el futuro -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>KiwiSleepy</h3>
+                    <p>Dulces sueños para tu bebé, tranquilidad para ti.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="index.html#home">Inicio</a></li>
+                        <li><a href="index.html#features">Características</a></li>
+                        <li><a href="index.html#story">Historia</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="index.html#download">Descargar</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="terminos-y-condiciones.html">Términos y Condiciones</a></li>
+                        <li><a href="politica-de-privacidad.html">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>Email: info@kiwisleepy.com</p>
+                    <p>© 2025 KiwiSleepy. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
