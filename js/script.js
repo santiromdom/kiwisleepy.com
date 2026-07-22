@@ -223,6 +223,14 @@ function handleLegalPageRedirect(lang) {
         targetPage = 'how-lullabies-calm-babies.html';
     } else if (currentPage === 'how-lullabies-calm-babies.html' && lang === 'es') {
         targetPage = 'como-las-nanas-calman-a-los-bebes.html';
+    } else if (currentPage === 'rutina-de-sueno-y-regresion.html' && lang === 'en') {
+        targetPage = 'sleep-routine-and-regression.html';
+    } else if (currentPage === 'sleep-routine-and-regression.html' && lang === 'es') {
+        targetPage = 'rutina-de-sueno-y-regresion.html';
+    } else if (currentPage === 'ruido-blanco-y-canciones-de-cuna.html' && lang === 'en') {
+        targetPage = 'white-noise-and-lullabies.html';
+    } else if (currentPage === 'white-noise-and-lullabies.html' && lang === 'es') {
+        targetPage = 'ruido-blanco-y-canciones-de-cuna.html';
     }
 
     if (targetPage) {
@@ -247,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // If current page is a legal page, check if we need to redirect right away
     const currentPage = getCurrentPage();
-    const isStaticPage = ['politica-de-privacidad.html', 'privacy-policy.html', 'terminos-y-condiciones.html', 'terms-and-conditions.html', 'blog.html', 'blog-en.html', 'como-las-nanas-calman-a-los-bebes.html', 'how-lullabies-calm-babies.html'].includes(currentPage);
+    const isStaticPage = ['politica-de-privacidad.html', 'privacy-policy.html', 'terminos-y-condiciones.html', 'terms-and-conditions.html', 'blog.html', 'blog-en.html', 'como-las-nanas-calman-a-los-bebes.html', 'how-lullabies-calm-babies.html', 'rutina-de-sueno-y-regresion.html', 'sleep-routine-and-regression.html', 'ruido-blanco-y-canciones-de-cuna.html', 'white-noise-and-lullabies.html'].includes(currentPage);
     
     if (isStaticPage) {
         // Correct static page language based on preferences
@@ -274,6 +282,18 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         } else if (currentPage === 'how-lullabies-calm-babies.html' && lang === 'es') {
             window.location.replace('como-las-nanas-calman-a-los-bebes.html');
+            return;
+        } else if (currentPage === 'rutina-de-sueno-y-regresion.html' && lang === 'en') {
+            window.location.replace('sleep-routine-and-regression.html');
+            return;
+        } else if (currentPage === 'sleep-routine-and-regression.html' && lang === 'es') {
+            window.location.replace('rutina-de-sueno-y-regresion.html');
+            return;
+        } else if (currentPage === 'ruido-blanco-y-canciones-de-cuna.html' && lang === 'en') {
+            window.location.replace('white-noise-and-lullabies.html');
+            return;
+        } else if (currentPage === 'white-noise-and-lullabies.html' && lang === 'es') {
+            window.location.replace('ruido-blanco-y-canciones-de-cuna.html');
             return;
         }
     }
