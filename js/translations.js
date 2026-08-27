@@ -50,7 +50,9 @@ const translations = {
     "feature2.img-src": "img/BannerRutinas.png",
     "feature2.img-alt": "Rutinas de Sueño",
     "feature3.img-src": "img/BannerRegistro.png",
-    "feature3.img-alt": "Registro de Sueño"
+    "feature3.img-alt": "Registro de Sueño",
+    "playstore.badge-src": "https://play.google.com/intl/en_us/badges/static/images/badges/es_badge_web_generic.png",
+    "playstore.badge-alt": "Disponible en Google Play"
   },
   en: {
     "meta.title": "KiwiSleepy - White Noise, Routines & Baby Sleep",
@@ -103,6 +105,8 @@ const translations = {
     "feature2.img-src": "img/BannerRutinasEn.png",
     "feature2.img-alt": "Sleep Routines",
     "feature3.img-src": "img/BannerRegistroEn.png",
-    "feature3.img-alt": "Sleep Log"
+    "feature3.img-alt": "Sleep Log",
+    "playstore.badge-src": "https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png",
+    "playstore.badge-alt": "Get it on Google Play"
   }
 };
