@@ -199,43 +199,87 @@ function changeLanguage(lang) {
 // Check current page filename
 function getCurrentPage() {
     const path = window.location.pathname;
-    return path.substring(path.lastIndexOf('/') + 1);
+    let page = path.substring(path.lastIndexOf('/') + 1);
+    // Fix for root paths
+    if (!page) {
+        page = 'index.html';
+    }
+    return page;
 }
 
-// Redirect logic for legal pages
-function handleLegalPageRedirect(lang) {
-    const currentPage = getCurrentPage();
-    let targetPage = '';
-
-    if (currentPage === 'politica-de-privacidad.html' && lang === 'en') {
-        targetPage = 'privacy-policy.html';
-    } else if (currentPage === 'privacy-policy.html' && lang === 'es') {
-        targetPage = 'politica-de-privacidad.html';
-    } else if (currentPage === 'terminos-y-condiciones.html' && lang === 'en') {
-        targetPage = 'terms-and-conditions.html';
-    } else if (currentPage === 'terms-and-conditions.html' && lang === 'es') {
-        targetPage = 'terminos-y-condiciones.html';
-    } else if (currentPage === 'blog.html' && lang === 'en') {
-        targetPage = 'blog-en.html';
-    } else if (currentPage === 'blog-en.html' && lang === 'es') {
-        targetPage = 'blog.html';
-    } else if (currentPage === 'como-las-nanas-calman-a-los-bebes.html' && lang === 'en') {
-        targetPage = 'how-lullabies-calm-babies.html';
-    } else if (currentPage === 'how-lullabies-calm-babies.html' && lang === 'es') {
-        targetPage = 'como-las-nanas-calman-a-los-bebes.html';
-    } else if (currentPage === 'rutina-de-sueno-y-regresion.html' && lang === 'en') {
-        targetPage = 'sleep-routine-and-regression.html';
-    } else if (currentPage === 'sleep-routine-and-regression.html' && lang === 'es') {
-        targetPage = 'rutina-de-sueno-y-regresion.html';
-    } else if (currentPage === 'ruido-blanco-y-canciones-de-cuna.html' && lang === 'en') {
-        targetPage = 'white-noise-and-lullabies.html';
-    } else if (currentPage === 'white-noise-and-lullabies.html' && lang === 'es') {
-        targetPage = 'ruido-blanco-y-canciones-de-cuna.html';
+// Map of static pages and their translations
+const staticPagesMap = {
+    'privacy': {
+        'es': 'politica-de-privacidad.html',
+        'en': 'privacy-policy.html',
+        'fr': 'privacy-policy.html',
+        'it': 'privacy-policy.html',
+        'pt': 'privacy-policy.html',
+        'de': 'privacy-policy.html'
+    },
+    'terms': {
+        'es': 'terminos-y-condiciones.html',
+        'en': 'terms-and-conditions.html',
+        'fr': 'terms-and-conditions.html',
+        'it': 'terms-and-conditions.html',
+        'pt': 'terms-and-conditions.html',
+        'de': 'terms-and-conditions.html'
+    },
+    'blog': {
+        'es': 'blog.html',
+        'en': 'blog-en.html',
+        'fr': 'blog-fr.html',
+        'it': 'blog-it.html',
+        'pt': 'blog-pt.html',
+        'de': 'blog-de.html'
+    },
+    'lullabies': {
+        'es': 'como-las-nanas-calman-a-los-bebes.html',
+        'en': 'how-lullabies-calm-babies.html',
+        'fr': 'how-lullabies-calm-babies-fr.html',
+        'it': 'how-lullabies-calm-babies-it.html',
+        'pt': 'how-lullabies-calm-babies-pt.html',
+        'de': 'how-lullabies-calm-babies-de.html'
+    },
+    'routine': {
+        'es': 'rutina-de-sueno-y-regresion.html',
+        'en': 'sleep-routine-and-regression.html',
+        'fr': 'sleep-routine-and-regression-fr.html',
+        'it': 'sleep-routine-and-regression-it.html',
+        'pt': 'sleep-routine-and-regression-pt.html',
+        'de': 'sleep-routine-and-regression-de.html'
+    },
+    'noise': {
+        'es': 'ruido-blanco-y-canciones-de-cuna.html',
+        'en': 'white-noise-and-lullabies.html',
+        'fr': 'white-noise-and-lullabies-fr.html',
+        'it': 'white-noise-and-lullabies-it.html',
+        'pt': 'white-noise-and-lullabies-pt.html',
+        'de': 'white-noise-and-lullabies-de.html'
     }
+};
 
-    if (targetPage) {
-        window.location.href = targetPage;
-        return true;
+function getStaticPageKey(filename) {
+    if (!filename) return null;
+    for (const [key, langs] of Object.entries(staticPagesMap)) {
+        if (Object.values(langs).includes(filename)) {
+            return key;
+        }
+    }
+    return null;
+}
+
+// Redirect logic for static/legal pages
+function handleStaticPageRedirect(lang) {
+    const currentPage = getCurrentPage();
+    const pageKey = getStaticPageKey(currentPage);
+    
+    if (pageKey && staticPagesMap[pageKey][lang]) {
+        const targetPage = staticPagesMap[pageKey][lang];
+        if (targetPage !== currentPage) {
+            window.location.href = targetPage;
+            return true;
+        }
     }
     return false;
 }
@@ -253,53 +297,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // If current page is a legal page, check if we need to redirect right away
+    // If current page is a static page, check if we need to redirect right away
     const currentPage = getCurrentPage();
-    const isStaticPage = ['politica-de-privacidad.html', 'privacy-policy.html', 'terminos-y-condiciones.html', 'terms-and-conditions.html', 'blog.html', 'blog-en.html', 'como-las-nanas-calman-a-los-bebes.html', 'how-lullabies-calm-babies.html', 'rutina-de-sueno-y-regresion.html', 'sleep-routine-and-regression.html', 'ruido-blanco-y-canciones-de-cuna.html', 'white-noise-and-lullabies.html'].includes(currentPage);
+    const pageKey = getStaticPageKey(currentPage);
     
-    if (isStaticPage) {
+    if (pageKey) {
         // Correct static page language based on preferences
-        if (currentPage === 'politica-de-privacidad.html' && lang === 'en') {
-            window.location.replace('privacy-policy.html');
-            return;
-        } else if (currentPage === 'privacy-policy.html' && lang === 'es') {
-            window.location.replace('politica-de-privacidad.html');
-            return;
-        } else if (currentPage === 'terminos-y-condiciones.html' && lang === 'en') {
-            window.location.replace('terms-and-conditions.html');
-            return;
-        } else if (currentPage === 'terms-and-conditions.html' && lang === 'es') {
-            window.location.replace('terminos-y-condiciones.html');
-            return;
-        } else if (currentPage === 'blog.html' && lang === 'en') {
-            window.location.replace('blog-en.html');
-            return;
-        } else if (currentPage === 'blog-en.html' && lang === 'es') {
-            window.location.replace('blog.html');
-            return;
-        } else if (currentPage === 'como-las-nanas-calman-a-los-bebes.html' && lang === 'en') {
-            window.location.replace('how-lullabies-calm-babies.html');
-            return;
-        } else if (currentPage === 'how-lullabies-calm-babies.html' && lang === 'es') {
-            window.location.replace('como-las-nanas-calman-a-los-bebes.html');
-            return;
-        } else if (currentPage === 'rutina-de-sueno-y-regresion.html' && lang === 'en') {
-            window.location.replace('sleep-routine-and-regression.html');
-            return;
-        } else if (currentPage === 'sleep-routine-and-regression.html' && lang === 'es') {
-            window.location.replace('rutina-de-sueno-y-regresion.html');
-            return;
-        } else if (currentPage === 'ruido-blanco-y-canciones-de-cuna.html' && lang === 'en') {
-            window.location.replace('white-noise-and-lullabies.html');
-            return;
-        } else if (currentPage === 'white-noise-and-lullabies.html' && lang === 'es') {
-            window.location.replace('ruido-blanco-y-canciones-de-cuna.html');
+        const targetPage = staticPagesMap[pageKey][lang];
+        if (targetPage && targetPage !== currentPage) {
+            window.location.replace(targetPage);
             return;
         }
     }
 
     // 2. Translate index page dynamically
-    if (!isStaticPage) {
+    if (!pageKey) {
         translatePage(lang);
     }
 
@@ -317,10 +329,10 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', (e) => {
             const selectedLang = e.currentTarget.getAttribute('data-lang');
             if (selectedLang !== localStorage.getItem('preferred-lang')) {
-                // If it's a legal page, redirect instead of translating dynamically
-                if (isStaticPage) {
+                // If it's a static page, redirect instead of translating dynamically
+                if (pageKey) {
                     localStorage.setItem('preferred-lang', selectedLang);
-                    handleLegalPageRedirect(selectedLang);
+                    handleStaticPageRedirect(selectedLang);
                 } else {
                     changeLanguage(selectedLang);
                 }

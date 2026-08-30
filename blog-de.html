@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="max-image-preview:large">
+    <meta name="description" content="KiwiSleepy Blog - Artikel über Babyschlaf, weißes Rauschen, Routinen und Tipps für Eltern.">
+    <title>Blog | KiwiSleepy</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="img/ic_launcher_v2_playstore.png">
+    <style>
+        .blog-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .blog-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--primary-color);
+            transition: var(--transition);
+            display: block;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.15);
+        }
+        .blog-card h2 {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-align: left;
+        }
+        .blog-card .meta {
+            color: var(--light-text);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .blog-card p {
+            line-height: 1.6;
+        }
+        .blog-card .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">
+                    <img src="img/ic_launcher_v2_playstore.png" alt="KiwiSleepy Logo">
+                    KiwiSleepy
+                </a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Startseite</a></li>
+                <li><a href="index.html#features">Funktionen</a></li>
+                <li><a href="index.html#story">Geschichte</a></li>
+                <li><a href="blog-de.html" style="color: var(--primary-color); font-weight: bold;">Blog</a></li>
+                <li><a href="index.html#download">Herunterladen</a></li>
+                <li class="lang-selector-container">
+                    <div class="lang-switcher">
+                        <button class="lang-btn" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    
+                        <button class="lang-btn" data-lang="fr">FR</button>
+                        <button class="lang-btn" data-lang="pt">PT</button>
+                        <button class="lang-btn" data-lang="it">IT</button>
+                        <button class="lang-btn active" data-lang="de">DE</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- BLOG SECTION -->
+    <section class="legal-page" style="background-color: var(--light-bg); min-height: 70vh;">
+        <div class="container">
+            <h1>KiwiSleepy Blog</h1>
+            <p class="section-intro">Tipps, Anleitungen und Wissenschaft über den Schlaf Ihres Babys</p>
+
+            <div class="blog-list">
+                <a href="white-noise-and-lullabies-de.html" class="blog-card">
+                    <h2>Wie helfen weißes Rauschen und Schlaflieder bei einer Schlafregression?</h2>
+                    <div class="meta">Juli 2026 • 3 Min. Lesezeit</div>
+                    <p>Schlafregressionen können zu häufigem Aufwachen und Schwierigkeiten beim Wiedereinschlafen führen. In diesen Situationen sind weißes Rauschen und Schlaflieder Werkzeuge, die helfen, eine entspannende Umgebung zu schaffen und die Erholung des Babys zu fördern...</p>
+                    <span class="read-more">Artikel lesen →</span>
+                </a>
+
+                <a href="sleep-routine-and-regression-de.html" class="blog-card">
+                    <h2>Wie hilft eine Schlafroutine einem Baby bei einer Schlafregression?</h2>
+                    <div class="meta">Juli 2026 • 3 Min. Lesezeit</div>
+                    <p>Schlafregressionen sind eine normale Phase der kindlichen Entwicklung. In dieser Zeit kommt es häufig vor, dass ein Baby, das bisher gut geschlafen hat, mehrmals in der Nacht aufwacht, länger braucht zum Einschlafen oder kürzere Nickerchen macht...</p>
+                    <span class="read-more">Artikel lesen →</span>
+                </a>
+
+                <a href="how-lullabies-calm-babies-de.html" class="blog-card">
+                    <h2>Umfassender Ratgeber: Wie Schlaflieder Babys beruhigen und die Wissenschaft hinter ihrer Magie</h2>
+                    <div class="meta">Juli 2026 • 5 Min. Lesezeit</div>
+                    <p>Einem Baby ein Schlaflied vorzusingen, ist eine universelle Tradition, ein aufmerksamer Akt der Liebe und des Trostes, der Kulturen und Generationen überschreitet. Doch was genau verleiht diesen sanften Melodien die Kraft, einen Säugling in einen tiefen Schlaf zu wiegen? Finden Sie es hier heraus...</p>
+                    <span class="read-more">Artikel lesen →</span>
+                </a>
+                
+                <!-- More articles will be added here in the future -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>KiwiSleepy</h3>
+                    <p>Süße Träume für Ihr Baby, Seelenfrieden für Sie.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="index.html#home">Startseite</a></li>
+                        <li><a href="index.html#features">Funktionen</a></li>
+                        <li><a href="index.html#story">Geschichte</a></li>
+                        <li><a href="blog-de.html">Blog</a></li>
+                        <li><a href="index.html#download">Herunterladen</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Rechtliches</h3>
+                    <ul>
+                        <li><a href="terms-and-conditions.html">Allgemeine Geschäftsbedingungen</a></li>
+                        <li><a href="privacy-policy.html">Datenschutzerklärung</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: info@kiwisleepy.com</p>
+                    <p>© 2025 KiwiSleepy. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="max-image-preview:large">
+    <meta name="description" content="Blog KiwiSleepy - Articoli sul sonno del bambino, rumore bianco, routine e consigli per i genitori.">
+    <title>Blog | KiwiSleepy</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="img/ic_launcher_v2_playstore.png">
+    <style>
+        .blog-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .blog-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--primary-color);
+            transition: var(--transition);
+            display: block;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.15);
+        }
+        .blog-card h2 {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-align: left;
+        }
+        .blog-card .meta {
+            color: var(--light-text);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .blog-card p {
+            line-height: 1.6;
+        }
+        .blog-card .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">
+                    <img src="img/ic_launcher_v2_playstore.png" alt="KiwiSleepy Logo">
+                    KiwiSleepy
+                </a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#features">Funzionalità</a></li>
+                <li><a href="index.html#story">La Nostra Storia</a></li>
+                <li><a href="blog-it.html" style="color: var(--primary-color); font-weight: bold;">Blog</a></li>
+                <li><a href="index.html#download">Scarica</a></li>
+                <li class="lang-selector-container">
+                    <div class="lang-switcher">
+                        <button class="lang-btn" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    
+                        <button class="lang-btn" data-lang="fr">FR</button>
+                        <button class="lang-btn" data-lang="pt">PT</button>
+                        <button class="lang-btn active" data-lang="it">IT</button>
+                        <button class="lang-btn" data-lang="de">DE</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- BLOG SECTION -->
+    <section class="legal-page" style="background-color: var(--light-bg); min-height: 70vh;">
+        <div class="container">
+            <h1>KiwiSleepy Blog</h1>
+            <p class="section-intro">Consigli, guide e scienza sul sonno del tuo bambino</p>
+
+            <div class="blog-list">
+                <a href="white-noise-and-lullabies-it.html" class="blog-card">
+                    <h2>Come aiutano il rumore bianco e le ninne nanne durante la regressione del sonno?</h2>
+                    <div class="meta">Luglio 2026 • 3 min di lettura</div>
+                    <p>Le regressioni del sonno possono causare risvegli frequenti e difficoltà a riaddormentarsi. In queste situazioni, il rumore bianco e le ninne nanne sono strumenti che aiutano a creare un ambiente rilassante e favorire il riposo del bambino...</p>
+                    <span class="read-more">Leggi l'articolo →</span>
+                </a>
+
+                <a href="sleep-routine-and-regression-it.html" class="blog-card">
+                    <h2>Come aiuta una routine del sonno durante una regressione del sonno?</h2>
+                    <div class="meta">Luglio 2026 • 3 min di lettura</div>
+                    <p>Le regressioni del sonno sono una fase normale dello sviluppo del bambino. In questo periodo, è comune che un bambino che dormiva bene inizi a svegliarsi più volte di notte, impieghi di più ad addormentarsi o faccia sonnellini più corti...</p>
+                    <span class="read-more">Leggi l'articolo →</span>
+                </a>
+
+                <a href="how-lullabies-calm-babies-it.html" class="blog-card">
+                    <h2>Guida completa: Come le ninne nanne calmano i bambini e la scienza dietro la loro magia</h2>
+                    <div class="meta">Luglio 2026 • 5 min di lettura</div>
+                    <p>Cantare una ninna nanna a un bambino è una tradizione universale, un gesto di amore e conforto che trascende culture e generazioni. Ma cos'è esattamente che dà a queste melodie il potere di cullare un neonato in un sonno profondo? Scoprilo qui...</p>
+                    <span class="read-more">Leggi l'articolo →</span>
+                </a>
+                
+                <!-- More articles will be added here in the future -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>KiwiSleepy</h3>
+                    <p>Sogni d'oro per il tuo bambino, tranquillità per te.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Link</h3>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#features">Funzionalità</a></li>
+                        <li><a href="index.html#story">La Nostra Storia</a></li>
+                        <li><a href="blog-it.html">Blog</a></li>
+                        <li><a href="index.html#download">Scarica</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legale</h3>
+                    <ul>
+                        <li><a href="terms-and-conditions.html">Termini e Condizioni</a></li>
+                        <li><a href="privacy-policy.html">Informativa sulla Privacy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: info@kiwisleepy.com</p>
+                    <p>© 2025 KiwiSleepy. Tutti i diritti riservati.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="max-image-preview:large">
+    <meta name="description" content="Blog KiwiSleepy - Articles sur le sommeil de bébé, le bruit blanc, les routines et des conseils pour les parents.">
+    <title>Blog | KiwiSleepy</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="img/ic_launcher_v2_playstore.png">
+    <style>
+        .blog-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .blog-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--primary-color);
+            transition: var(--transition);
+            display: block;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.15);
+        }
+        .blog-card h2 {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-align: left;
+        }
+        .blog-card .meta {
+            color: var(--light-text);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .blog-card p {
+            line-height: 1.6;
+        }
+        .blog-card .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">
+                    <img src="img/ic_launcher_v2_playstore.png" alt="KiwiSleepy Logo">
+                    KiwiSleepy
+                </a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Accueil</a></li>
+                <li><a href="index.html#features">Fonctionnalités</a></li>
+                <li><a href="index.html#story">Notre Histoire</a></li>
+                <li><a href="blog-fr.html" style="color: var(--primary-color); font-weight: bold;">Blog</a></li>
+                <li><a href="index.html#download">Télécharger</a></li>
+                <li class="lang-selector-container">
+                    <div class="lang-switcher">
+                        <button class="lang-btn" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    
+                        <button class="lang-btn active" data-lang="fr">FR</button>
+                        <button class="lang-btn" data-lang="pt">PT</button>
+                        <button class="lang-btn" data-lang="it">IT</button>
+                        <button class="lang-btn" data-lang="de">DE</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- BLOG SECTION -->
+    <section class="legal-page" style="background-color: var(--light-bg); min-height: 70vh;">
+        <div class="container">
+            <h1>KiwiSleepy Blog</h1>
+            <p class="section-intro">Conseils, guides et science sur le sommeil de votre bébé</p>
+
+            <div class="blog-list">
+                <a href="white-noise-and-lullabies-fr.html" class="blog-card">
+                    <h2>Comment le bruit blanc et les berceuses aident-ils pendant une régression du sommeil ?</h2>
+                    <div class="meta">Juillet 2026 • 3 min de lecture</div>
+                    <p>Les régressions du sommeil peuvent provoquer des réveils fréquents et des difficultés à se rendormir. Dans ces situations, le bruit blanc et les berceuses sont des outils qui peuvent aider à créer un environnement relaxant et favoriser le repos de bébé...</p>
+                    <span class="read-more">Lire l'article →</span>
+                </a>
+
+                <a href="sleep-routine-and-regression-fr.html" class="blog-card">
+                    <h2>Comment une routine de sommeil aide-t-elle un bébé lors d'une régression du sommeil ?</h2>
+                    <div class="meta">Juillet 2026 • 3 min de lecture</div>
+                    <p>Les régressions du sommeil sont une étape normale du développement de bébé. Pendant cette période, il est courant qu'un bébé qui dormait bien commence à se réveiller plusieurs fois la nuit, mette plus de temps à s'endormir, ou fasse des siestes plus courtes...</p>
+                    <span class="read-more">Lire l'article →</span>
+                </a>
+
+                <a href="how-lullabies-calm-babies-fr.html" class="blog-card">
+                    <h2>Guide complet : Comment les berceuses calment les bébés et la science derrière leur magie</h2>
+                    <div class="meta">Juillet 2026 • 5 min de lecture</div>
+                    <p>Chanter une berceuse à un bébé est une tradition universelle, un acte attentionné d'amour et de réconfort qui traverse les cultures et les générations. Mais qu'est-ce qui donne exactement à ces douces mélodies le pouvoir d'endormir un nourrisson dans un sommeil profond ? Découvrez-le ici...</p>
+                    <span class="read-more">Lire l'article →</span>
+                </a>
+                
+                <!-- More articles will be added here in the future -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>KiwiSleepy</h3>
+                    <p>De beaux rêves pour votre bébé, la tranquillité d'esprit pour vous.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Liens</h3>
+                    <ul>
+                        <li><a href="index.html#home">Accueil</a></li>
+                        <li><a href="index.html#features">Fonctionnalités</a></li>
+                        <li><a href="index.html#story">Notre Histoire</a></li>
+                        <li><a href="blog-fr.html">Blog</a></li>
+                        <li><a href="index.html#download">Télécharger</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Légal</h3>
+                    <ul>
+                        <li><a href="terms-and-conditions.html">Conditions Générales</a></li>
+                        <li><a href="privacy-policy.html">Politique de Confidentialité</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: info@kiwisleepy.com</p>
+                    <p>© 2025 KiwiSleepy. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+
+
