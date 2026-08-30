@@ -209,6 +209,14 @@ function getCurrentPage() {
 
 // Map of static pages and their translations
 const staticPagesMap = {
+    'index': {
+        'es': 'index-es.html',
+        'en': 'index-en.html',
+        'fr': 'index-fr.html',
+        'it': 'index-it.html',
+        'pt': 'index-pt.html',
+        'de': 'index-de.html'
+    },
     'privacy': {
         'es': 'politica-de-privacidad.html',
         'en': 'privacy-policy.html',
@@ -285,28 +293,33 @@ function handleStaticPageRedirect(lang) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Detect language
+    const currentPage = getCurrentPage();
+    const pageKey = getStaticPageKey(currentPage);
+    
+    // If we are on a static page, the URL dictates the language
+    let pageLang = null;
+    if (pageKey) {
+        for (const [l, file] of Object.entries(staticPagesMap[pageKey])) {
+            if (file === currentPage || (currentPage === 'index.html' && l === 'es')) {
+                pageLang = l;
+                break;
+            }
+        }
+    }
+
     let lang = localStorage.getItem('preferred-lang');
     
-    if (!lang) {
+    if (pageLang) {
+        // Trust the URL over localStorage for static pages
+        lang = pageLang;
+        localStorage.setItem('preferred-lang', lang);
+    } else if (!lang) {
+        // Fallback for dynamic pages if no localStorage
         const browserLang = (navigator.language || navigator.userLanguage).toLowerCase();
         if (browserLang.startsWith('en')) {
             lang = 'en';
         } else {
-            lang = 'es'; // Default is Spanish
-        }
-    }
-
-    // If current page is a static page, check if we need to redirect right away
-    const currentPage = getCurrentPage();
-    const pageKey = getStaticPageKey(currentPage);
-    
-    if (pageKey) {
-        // Correct static page language based on preferences
-        const targetPage = staticPagesMap[pageKey][lang];
-        if (targetPage && targetPage !== currentPage) {
-            window.location.replace(targetPage);
-            return;
+            lang = 'es';
         }
     }
 
